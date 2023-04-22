@@ -25,8 +25,8 @@ def floyd_warshall_recursive(dist):
     def shortest_path(k):
         """
         Shortest_path is the recursive function.
-        It takes the number of intermediate nodes as an argument (k) defined as the number of vertices
-        of an n x n matrix -1.
+        It takes the number of intermediate nodes as an argument (k) defined as the number
+        of vertices of an n x n matrix -1.
         It defines the base case as being where there are no intermediate nodes k ==-1.
         If k ==-1 then the current input matrix is returned.
         Else the minimum distance is calculated between the direct path betwenn i -> j
@@ -36,7 +36,7 @@ def floyd_warshall_recursive(dist):
         # Base case
         if k == -1:
             return dist
-        
+
         # Recursive case
         for i in range(vertices):
             for j in range(vertices):
