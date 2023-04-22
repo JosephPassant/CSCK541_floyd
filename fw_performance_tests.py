@@ -2,6 +2,7 @@
 import sys
 import timeit
 import pandas as pd
+from scipy.stats import ttest_ind
 from recursive_floyd_warshall import floyd_warshall_recursive
 from iterative_floyd_warshall import floyd_warshall_iterative
 
@@ -46,3 +47,10 @@ for i in range (1,1000):
 #mean execution time for execution time iterative
 mean_execution_time = df_iterative_results['Iterative Execution Time (s)'].mean()
 print("Mean iterative function execution time: ", mean_execution_time, "(s)")
+
+#perform t-test with p-value of 0.05
+ttest, pval = ttest_ind(df_recursive_results\
+                        ['Recursive Execution Time (s)'],\
+                              df_iterative_results['Iterative Execution Time (s)'])
+print("p-value: {:.5f}".format(pval))
+print("t-test: ", ttest)
