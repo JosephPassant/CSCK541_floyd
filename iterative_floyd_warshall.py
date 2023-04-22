@@ -13,12 +13,12 @@ graph = [[0, 7, NO_PATH, 8],
 MAX_LENGTH = len(graph[0])
 
 
-def floyd(distance):
+def floyd_warshall_iterative(distance):
 
     """
     A simple implementation of Floyd's algorithm
 
-    floyd is a function that takes a matrix as an input and returns an updated
+    Floyd is a function that takes a matrix as an input and returns an updated
     matrix displaying the shortest path between nodes of the input graph
     """
 
@@ -51,5 +51,5 @@ def floyd(distance):
 # calls the floyd function providing the graph matrix as input which finds
 # the shortest path between nodes
 
-for row in floyd(graph):
+for row in floyd_warshall_iterative(graph):
     print(row)
