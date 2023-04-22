@@ -1,14 +1,18 @@
 """Unit tests for floyd warshall functions"""
 
-from iterative_floyd_warshall import floyd
-
 import unittest
 import sys
+
+from iterative_floyd_warshall import floyd
+
+
 NO_PATH = sys.maxsize
 
 class TestFloyd(unittest.TestCase):
+    """Test case for floyd function"""
 
     def test_floyd(self):
+        """Test case 1"""
         graph = [[0, 7, NO_PATH, 8],
                 [NO_PATH, 0, 5, NO_PATH],
                 [NO_PATH, NO_PATH, 0, 2],
