@@ -7,7 +7,7 @@ def floyd_warshall_recursive(dist):
     iterates for number of intermediate node for all combinations of start and end node 
     returns minimum distance between nodes
     """
-    v = len(dist)
+    vertices = len(dist)
 
     def shortest_path(i,j,k):
         """
@@ -18,12 +18,12 @@ def floyd_warshall_recursive(dist):
         """
         if k == -1:
             return dist[i][j]
-        
         else:
-            return min(shortest_path(i, j, k - 1), shortest_path(i, k, k - 1) + shortest_path(k, j, k - 1))
-                       
-    for k in range (v):
-        for i in range (v):
-            for j in range(v):
+            return min(shortest_path(i, j, k - 1), shortest_path(i, k, k - 1)/
+                        + shortest_path(k, j, k - 1))
+           
+    for k in range (vertices):
+        for i in range (vertices):
+            for j in range(vertices):
                 dist[i][j] = shortest_path(i, j, k)
     return dist
