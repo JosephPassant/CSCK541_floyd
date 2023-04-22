@@ -1,16 +1,5 @@
 """Floyd Warshall Algorithm"""
-
-import sys
 import itertools
-
-NO_PATH = sys.maxsize
-
-graph = [[0, 7, NO_PATH, 8],
-[NO_PATH, 0, 5, NO_PATH],
-[NO_PATH, NO_PATH, 0, 2],
-[NO_PATH, NO_PATH, NO_PATH, 0]]
-
-MAX_LENGTH = len(graph[0])
 
 
 def floyd_warshall_iterative(distance):
@@ -22,11 +11,12 @@ def floyd_warshall_iterative(distance):
     matrix displaying the shortest path between nodes of the input graph
     """
 
-# iterates over all possible combinations of intermediate, start and nodes
+    max_length= len(distance[0])
+    # iterates over all possible combinations of intermediate, start and nodes
 
     for intermediate, start_node,end_node\
           in itertools.product\
-            (range(MAX_LENGTH),range(MAX_LENGTH), range(MAX_LENGTH)):
+            (range(max_length),range(max_length), range(max_length)):
 
         # if start_node and end_node are the same then the distance between them is set to 0.
 
@@ -46,10 +36,3 @@ def floyd_warshall_iterative(distance):
 
     # prints the updated matrix
     return distance
-
-
-# calls the floyd function providing the graph matrix as input which finds
-# the shortest path between nodes
-
-for row in floyd_warshall_iterative(graph):
-    print(row)
