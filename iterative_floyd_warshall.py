@@ -45,10 +45,11 @@ def floyd(distance):
         # between every pair of nodes in the graph
 
     # prints the updated matrix
-    print(distance)
+    return distance
 
 
 # calls the floyd function providing the graph matrix as input which finds
 # the shortest path between nodes
 
-floyd(graph)
+for row in floyd(graph):
+    print(row)
