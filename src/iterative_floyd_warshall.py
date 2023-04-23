@@ -1,17 +1,16 @@
 """Floyd Warshall Algorithm"""
+
 import sys
 import itertools
 
-# Define a constant to represent no path between two nodes
-# equal to the maximum integer value of the system
 NO_PATH = sys.maxsize
 
-#Update this graph to test different graphs (must be n x n matrix)
+#Update the graph below to test different graphs (must be n x n matrix)
+
 graph = [[0, 7, NO_PATH, 8],
         [NO_PATH, 0, 5, NO_PATH],
         [NO_PATH, NO_PATH, 0, 2],
         [NO_PATH, NO_PATH, NO_PATH, 0]]
-
 
 def floyd_warshall_iterative(distance):
 
@@ -44,7 +43,6 @@ def floyd_warshall_iterative(distance):
         # after all iterations are complete the distance matrix contains the shortest path
         # between every pair of nodes in the graph
 
-    # prints the updated matrix
     return distance
 
 print("Shortest path matrix using floyd_warshall_iterative function")
