@@ -2,11 +2,10 @@
 
 import sys
 
-# Define a constant to represent no path between two nodes
-# equal to the maximum integer value of the system
 NO_PATH = sys.maxsize
 
-#Update this graph to test different graphs (must be n x n matrix)
+#Update the graph below to test different graphs (must be n x n matrix)
+
 graph = [[0, 7, NO_PATH, 8],
         [NO_PATH, 0, 5, NO_PATH],
         [NO_PATH, NO_PATH, 0, 2],
