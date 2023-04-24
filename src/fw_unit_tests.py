@@ -13,9 +13,8 @@ NO_PATH = sys.maxsize
 class TestFloyd(unittest.TestCase):
     """Test case for floyd function."""
 
-    def test_floyd_warshall_recursive_1(self):
+    def test_case_1(self):
         """
-        Test case 1.
         Defines a 4 x 4 matrix and calls floyd_warshall_recursive function
         passing the matrix as an argument.
         It then compares the output of the function with the known expected output.
@@ -32,9 +31,8 @@ class TestFloyd(unittest.TestCase):
                     [sys.maxsize, sys.maxsize, sys.maxsize, 0]]
         self.assertEqual(result, expected)
 
-    def test_floyd_warshall_recursive_2(self):
+    def test_case_2(self):
         """
-        Test case 2.
         Defines a 3x3 matrix and calls floyd_warshall_recursive function
         passing the matrix as an argument.
         It then compares the output of the function with the known expected output.
@@ -48,9 +46,8 @@ class TestFloyd(unittest.TestCase):
                  [10, 5, 0]]
         self.assertEqual(result, expected_2)
 
-    def test_floyd_warshall_recursive_3(self):
+    def test_case_3(self):
         """
-        Test case 3.
         Defines a 5 x 5 matrix and calls floyd_warshall_recursive function
         passing the matrix as an argument.
         It then compares the output of the function with the known expected output.
@@ -68,9 +65,8 @@ class TestFloyd(unittest.TestCase):
                     [6, 9, 11, 4, 0]]
         self.assertEqual(result, expected)
 
-    def test_floyd_warshall_recursive_4(self):
+    def test_case_4(self):
         """
-        Test case 4.
         Defines a 10 x 10 matrix and calls floyd_warshall_recursive function
         passing the matrix as an argument.
         It then compares the output of the function with the known expected output.
@@ -98,9 +94,8 @@ class TestFloyd(unittest.TestCase):
                     [3, 6, 9, 12, 15, 18, 21, 24, 27, 0]]
         self.assertEqual(result, expected)
 
-    def test_floyd_warshall_recursive_5(self):
+    def test_case_5(self):
         """
-        Test case 5.
         Defines a 5 x 5 matrix and calls floyd_warshall_recursive function
         passing the matrix as an argument.
         It then compares the output of the function with the known expected output.
@@ -118,9 +113,8 @@ class TestFloyd(unittest.TestCase):
                     [3, 6, 6, 6, 0]]
         self.assertEqual(result, expected)
 
-    def test_floyd_warshall_recursive_6(self):
+    def test_case_6(self):
         '''
-        Test case 6.
         Defines a 4 x 4 matrix and calls floyd_warshall_recursive function
         passing the matrix as an argument.
         It then compares the output of the function with the known expected output.
