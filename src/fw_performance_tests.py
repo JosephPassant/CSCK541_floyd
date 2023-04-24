@@ -22,7 +22,7 @@ graph = [[0, 7, NO_PATH, 8],
         [NO_PATH, NO_PATH, 0, 2],
         [NO_PATH, NO_PATH, NO_PATH, 0]]
 
-def performance_test(graph, function_name):
+def performance_test(matrix, function_name):
     """
     Performance test for Floyd Warshall functions
     starts timer, calls function, stops timer and returns execution time
@@ -60,7 +60,7 @@ mean_execution_time = df_iterative_results['Iterative Execution Time (s)'].mean(
 print("Mean iterative function execution time: ", mean_execution_time, "(s)")
 
 
-def plot_execution_time (df, title):
+def plot_execution_time (data_frame, title):
     """
     plots the distribution of execution times for a given function.
     DF is the dataframe containing the execution times
@@ -68,7 +68,7 @@ def plot_execution_time (df, title):
     title is the title of the graph
     """
     fig, ax = plt.subplots()
-    df.plot.hist(bins=100, ax=ax)
+    data_frame.plot.hist(bins=100, ax=ax)
     ax.set_title(title)
     ax.set_xlabel('Execution Time (s)')
     ax.set_ylabel('Frequency')
@@ -97,6 +97,6 @@ if recursive_shapiro_test.pvalue > 0.05 and iterative_shapiro_test.pvalue > 0.05
     print("p-value: ", pval)
     print("t-test: ", ttest)
 
-#If the data is not normally distributed, prints a message to the user 
+#If the data is not normally distributed, prints a message to the user
 else:
     print("The data is not normally distributed so it is not appropriate to perform a t-test")
