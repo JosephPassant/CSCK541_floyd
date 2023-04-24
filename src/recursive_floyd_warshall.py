@@ -41,7 +41,6 @@ def floyd_warshall_recursive(dist):
             for j in range(vertices):
                 dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
 
-        #Decrement k and call the function recursively
         k-=1
         return shortest_path(k)
 
