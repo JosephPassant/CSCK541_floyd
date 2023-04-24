@@ -78,23 +78,6 @@ plot_execution_time(df_recursive_results, floyd_warshall_recursive, 'Recursive E
 plot_execution_time(df_iterative_results, floyd_warshall_iterative, 'Iterative Execution Time Distribution')
 
 
-'''#Prints a graph showing distribution of execution times from the recursive function
-fig, recursive = plt.subplots()
-df_recursive_results['Recursive Execution Time (s)'].plot.hist(bins=100, ax=recursive)
-recursive.set_title('Recursive Execution Time Distribution')
-recursive.set_xlabel('Execution Time (s)')
-recursive.set_ylabel('Frequency')
-plt.show(block=True)
-
-#Print graph showing distribution of execution times from the iterative function
-fig, iterative = plt.subplots()
-df_iterative_results['Iterative Execution Time (s)'].plot.hist(bins=100, ax=iterative)
-iterative.set_title('Iterative Execution Time Distribution')
-iterative.set_xlabel('Execution Time (s)')
-iterative.set_ylabel('Frequency')
-plt.show(block=True)
-'''
-
 #Tests for normal distribution of recursive function execution times
 recursive_shapiro_test = shapiro(df_recursive_results['Recursive Execution Time (s)'])
 print("Shapiro Statistic for floyd_warshall_recursive_function", recursive_shapiro_test.statistic)
