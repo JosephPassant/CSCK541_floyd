@@ -22,13 +22,13 @@ graph = [[0, 7, NO_PATH, 8],
         [NO_PATH, NO_PATH, 0, 2],
         [NO_PATH, NO_PATH, NO_PATH, 0]]
 
-def performance_test_recursive():
+def performance_test(graph, function_name):
     """
-    Performance test for recursive Floyd Warshall function
-    starts timer, calls recursive function, stops timer and returns execution time    
+    Performance test for Floyd Warshall functions
+    starts timer, calls function, stops timer and returns execution time
     """
     start_time = timeit.default_timer()
-    floyd_warshall_recursive(graph)
+    function_name(graph)
     return timeit.default_timer() - start_time
 
 #Creates a dataframe to store execution times from recursive function
@@ -36,7 +36,7 @@ df_recursive_results = pd.DataFrame(columns=['Recursive Execution Time (s)'])
 
 #Run the performance test 1000 times and add execution time to dataframe
 for i in range (1,1000):
-    execution_time = performance_test_recursive()
+    execution_time = performance_test(graph, floyd_warshall_recursive)
     #Adds execution time to dataframe
     df_recursive_results.loc[i] = [execution_time]
 
@@ -45,21 +45,13 @@ for i in range (1,1000):
 mean_execution_time = df_recursive_results['Recursive Execution Time (s)'].mean()
 print("Mean recursive function execution time: ", mean_execution_time, "(s)")
 
-def performance_test_iterative():
-    """
-    Performance test for iterative Floyd Warshall function
-    starts timer, calls iterative function, stops timer and returns execution time
-    """
-    start_time = timeit.default_timer()
-    floyd_warshall_iterative(graph)
-    return timeit.default_timer() - start_time
-
+performance_test(graph, floyd_warshall_iterative)
 #Creates a dataframe to store execution times from iterative function
 df_iterative_results = pd.DataFrame(columns=['Iterative Execution Time (s)'])
 
 #Run the performance test 1000 times and add execution time to dataframe
 for i in range (1,1000):
-    execution_time = performance_test_iterative()
+    execution_time = performance_test(graph, floyd_warshall_iterative)
     #Add execution time to dataframe
     df_iterative_results.loc[i] = [execution_time]
 
