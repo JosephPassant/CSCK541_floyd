@@ -47,6 +47,7 @@ def floyd_warshall_recursive(dist):
 
     return shortest_path(vertices-1)
 
-print("Shortest path matrix using floyd_warshall_recursive function")
-for row in floyd_warshall_recursive(graph):
-    print(row)
+if __name__ == "__main__":
+    print("Shortest path matrix using floyd_warshall_recursive function")
+    for row in floyd_warshall_recursive(graph):
+        print(row)

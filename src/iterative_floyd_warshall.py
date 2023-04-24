@@ -45,6 +45,7 @@ def floyd_warshall_iterative(distance):
 
     return distance
 
-print("Shortest path matrix using floyd_warshall_iterative function")
-for row in floyd_warshall_iterative(graph):
-    print(row)
+if __name__ == "__main__":
+    print("Shortest path matrix using floyd_warshall_iterative function")
+    for row in floyd_warshall_iterative(graph):
+        print(row)
