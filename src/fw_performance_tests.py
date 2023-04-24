@@ -22,7 +22,7 @@ graph = [[0, 7, NO_PATH, 8],
         [NO_PATH, NO_PATH, 0, 2],
         [NO_PATH, NO_PATH, NO_PATH, 0]]
 
-def performance_test(matrix, function_name):
+def performance_test(function_name):
     """
     Performance test for Floyd Warshall functions
     starts timer, calls function, stops timer and returns execution time
@@ -36,7 +36,7 @@ df_recursive_results = pd.DataFrame(columns=['Recursive Execution Time (s)'])
 
 #Run the performance test 1000 times and add execution time to dataframe
 for i in range (1,1000):
-    execution_time = performance_test(graph, floyd_warshall_recursive)
+    execution_time = performance_test(floyd_warshall_recursive)
     #Adds execution time to dataframe
     df_recursive_results.loc[i] = [execution_time]
 
@@ -45,13 +45,13 @@ mean_execution_time = df_recursive_results['Recursive Execution Time (s)'].mean(
 print("Mean recursive function execution time: ", mean_execution_time, "(s)")
 
 
-performance_test(graph, floyd_warshall_iterative)
+performance_test(floyd_warshall_iterative)
 #Creates a dataframe to store execution times from iterative function
 df_iterative_results = pd.DataFrame(columns=['Iterative Execution Time (s)'])
 
 #Run the performance test 1000 times and add execution time to dataframe
 for i in range (1,1000):
-    execution_time = performance_test(graph, floyd_warshall_iterative)
+    execution_time = performance_test(floyd_warshall_iterative)
     #Add execution time to dataframe
     df_iterative_results.loc[i] = [execution_time]
 
@@ -70,6 +70,7 @@ def plot_execution_time (data_frame, title):
     fig, ax = plt.subplots()
     data_frame.plot.hist(bins=100, ax=ax)
     ax.set_title(title)
+    ax.set_xlim(0, 6.01e-05)
     ax.set_xlabel('Execution Time (s)')
     ax.set_ylabel('Frequency')
     plt.show()
