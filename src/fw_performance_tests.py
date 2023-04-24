@@ -59,7 +59,26 @@ for i in range (1,1000):
 mean_execution_time = df_iterative_results['Iterative Execution Time (s)'].mean()
 print("Mean iterative function execution time: ", mean_execution_time, "(s)")
 
-#Prints a graph showing distribution of execution times from the recursive function
+def plot_execution_time (df, function_name, title):
+    """
+    plots the distribution of execution times for a given function.
+    DF is the dataframe containing the execution times
+    function name is the name of the function i.e. recursive or iterative
+    title is the title of the graph
+    """
+    fig, ax = plt.subplots()
+    df.plot.hist(bins=100, ax=ax)
+    ax.set_title(title)
+    ax.set_xlabel('Execution Time (s)')
+    ax.set_ylabel('Frequency')
+    plt.show()
+
+plot_execution_time(df_recursive_results, floyd_warshall_recursive, 'Recursive Execution Time Distribution')
+
+plot_execution_time(df_iterative_results, floyd_warshall_iterative, 'Iterative Execution Time Distribution')
+
+
+'''#Prints a graph showing distribution of execution times from the recursive function
 fig, recursive = plt.subplots()
 df_recursive_results['Recursive Execution Time (s)'].plot.hist(bins=100, ax=recursive)
 recursive.set_title('Recursive Execution Time Distribution')
@@ -74,6 +93,7 @@ iterative.set_title('Iterative Execution Time Distribution')
 iterative.set_xlabel('Execution Time (s)')
 iterative.set_ylabel('Frequency')
 plt.show(block=True)
+'''
 
 #Tests for normal distribution of recursive function execution times
 recursive_shapiro_test = shapiro(df_recursive_results['Recursive Execution Time (s)'])
