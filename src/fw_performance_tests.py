@@ -97,6 +97,13 @@ if recursive_shapiro_test.pvalue > 0.05 and iterative_shapiro_test.pvalue > 0.05
     print("p-value: ", pval)
     print("t-test: ", ttest)
 
+    if pval < 0.05:
+        print("The difference in mean execution time of the recursive and iterative functions\
+              is significantly significant")
+    else:
+        print("The difference in mean execution time of the recursive and iterative functions\
+              is not significantly significant")
+
 #If the data is not normally distributed, prints a message to the user
 else:
     print("The data is not normally distributed so it is not appropriate to perform a t-test")
