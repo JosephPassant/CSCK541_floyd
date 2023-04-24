@@ -17,7 +17,7 @@ def floyd_warshall_iterative(distance):
     """
     A simple implementation of Floyd's algorithm
 
-    Floyd is a function that takes a matrix as an input and returns an updated
+    The function takes a n x n matrix as an input and returns an updated
     matrix displaying the shortest path between nodes of the input graph
     """
 
