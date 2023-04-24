@@ -48,9 +48,10 @@ The unit tests define 6 test cases to ensure correct functioning of the floyd_wa
 
 To run the unit tests from the command line, run the following command<br>
 <br>
-    ```
-    python fw_unit_tests.py
-    ```
+
+```
+python fw_unit_tests.py
+```
 <br>
 To update this unit test file for other functions open the file in your IDE. Update line 7 to import your own function from its reference path and update references to `floyd_warshall_recursive(graph)` to that of `<your_own_function>(graph)` in each test case.<br>
 
