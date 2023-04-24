@@ -40,10 +40,10 @@ for i in range (1,1000):
     #Adds execution time to dataframe
     df_recursive_results.loc[i] = [execution_time]
 
-
 #Calculates the Mean execution time for execution time recursive
 mean_execution_time = df_recursive_results['Recursive Execution Time (s)'].mean()
 print("Mean recursive function execution time: ", mean_execution_time, "(s)")
+
 
 performance_test(graph, floyd_warshall_iterative)
 #Creates a dataframe to store execution times from iterative function
@@ -59,7 +59,8 @@ for i in range (1,1000):
 mean_execution_time = df_iterative_results['Iterative Execution Time (s)'].mean()
 print("Mean iterative function execution time: ", mean_execution_time, "(s)")
 
-def plot_execution_time (df, function_name, title):
+
+def plot_execution_time (df, title):
     """
     plots the distribution of execution times for a given function.
     DF is the dataframe containing the execution times
@@ -73,9 +74,9 @@ def plot_execution_time (df, function_name, title):
     ax.set_ylabel('Frequency')
     plt.show()
 
-plot_execution_time(df_recursive_results, floyd_warshall_recursive, 'Recursive Execution Time Distribution')
+plot_execution_time(df_recursive_results, 'Recursive Execution Time Distribution')
 
-plot_execution_time(df_iterative_results, floyd_warshall_iterative, 'Iterative Execution Time Distribution')
+plot_execution_time(df_iterative_results, 'Iterative Execution Time Distribution')
 
 
 #Tests for normal distribution of recursive function execution times
