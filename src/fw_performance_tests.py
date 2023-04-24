@@ -1,4 +1,4 @@
-"""Performace tests for recursive and iterative Floyd Warshall functions."""
+"""Performace tests for recursive and iterative Floyd Warshall functions"""
 
 #requires the following modules to be installed:
 import sys
