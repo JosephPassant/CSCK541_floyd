@@ -9,8 +9,8 @@ from scipy.stats import ttest_ind
 from scipy.stats import shapiro
 
 #requires the following files to be in the same directory:
-from ..recursive_floyd_warshall import floyd_warshall_recursive
-from ..iterative_floyd_warshall import floyd_warshall_iterative
+from .src.recursive_floyd_warshall import floyd_warshall_recursive
+from .src.iterative_floyd_warshall import floyd_warshall_iterative
 
 # Define a constant to represent no path between two nodes
 # equal to the maximum integer value of the system
