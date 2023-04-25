@@ -8,7 +8,8 @@ import matplotlib.pyplot as plt
 from scipy.stats import ttest_ind
 from scipy.stats import shapiro
 
-#requires the following files to be in the same directory:
+#import the functions to be tested from the src folder
+sys.path.append('../src/')
 from recursive_floyd_warshall import floyd_warshall_recursive
 from iterative_floyd_warshall import floyd_warshall_iterative
 
@@ -50,7 +51,7 @@ performance_test(floyd_warshall_iterative)
 df_iterative_results = pd.DataFrame(columns=['Iterative Execution Time (s)'])
 
 #Run the performance test 1000 times and add execution time to dataframe
-for i in range (,1000):
+for i in range (0,1000):
     execution_time = performance_test(floyd_warshall_iterative)
     #Add execution time to dataframe
     df_iterative_results.loc[i] = [execution_time]
