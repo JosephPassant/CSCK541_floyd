@@ -3,6 +3,7 @@
 import unittest
 import sys
 
+#import the function to be tested from the src folder
 sys.path.append('../src/')
 from recursive_floyd_warshall import floyd_warshall_recursive
 
