@@ -3,7 +3,7 @@
 import unittest
 import sys
 
-# Requires the following files to be in the same directory:
+sys.path.append('../src/')
 from recursive_floyd_warshall import floyd_warshall_recursive
 
 # Define a constant to represent no path between two nodes
