@@ -53,28 +53,27 @@ mean_iterative_execution_time = df_results['floyd_warshall_iterative execution t
 print("Mean recursive function execution time: ", mean_recursive_execution_time, "(s)")
 print("Mean iterative function execution time: ", mean_iterative_execution_time, "(s)")
 
-def plot_execution_time(df_results, col1, col2, title):
+def plot_execution_time(col1, col2, title):
     """
     Plots the distribution of execution times for two columns on the same chart.
     df_results is the dataframe containing the execution times.
     col1 and col2 are the names of the columns to plot.
     title is the title of the graph.
     """
-    fig, ax = plt.subplots()
-    ax.hist(df_results[col1], bins=75, alpha=0.5, label=col1)
-    ax.hist(df_results[col2], bins=75, alpha=0.5, label=col2)
-    ax.set_title(title)
-    ax.set_xlim(0, 0.00014)
-    ax.set_ylim(0, 1000)
-    ax.set_xlabel('Execution Time (s)')
-    ax.set_ylabel('Frequency')
-    ax.legend()
+    fig, axis = plt.subplots()
+    axis.hist(df_results[col1], bins=75, label=col1)
+    axis.hist(df_results[col2], bins=75, label=col2)
+    axis.set_title(title)
+    axis.set_xlim(0, 0.00014)
+    axis.set_ylim(0, 1000)
+    axis.set_xlabel('Execution Time (s)')
+    axis.set_ylabel('Frequency')
+    axis.legend()
     plt.show()
 
-plot_execution_time(df_results, 'floyd_warshall_recursive execution time (s)',\
+plot_execution_time('floyd_warshall_recursive execution time (s)',\
                     'floyd_warshall_iterative execution time (s)',\
                     'Recursive and Iterative Execution Time Distribution')
-
 
 #Tests for normal distribution of recursive function execution times
 recursive_shapiro_test = shapiro(df_results['floyd_warshall_recursive execution time (s)'])
