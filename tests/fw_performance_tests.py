@@ -45,14 +45,12 @@ def run_performance_test(function_name):
         #Adds execution time to dataframe
         df_results.loc[i, function_name.__name__ + ' execution time (s)'] = execution_time
 
-
 run_performance_test(floyd_warshall_recursive)
 run_performance_test(floyd_warshall_iterative)
 mean_recursive_execution_time = df_results['floyd_warshall_recursive execution time (s)'].mean()
 mean_iterative_execution_time = df_results['floyd_warshall_iterative execution time (s)'].mean()
 print("Mean recursive function execution time: ", mean_recursive_execution_time, "(s)")
 print("Mean iterative function execution time: ", mean_iterative_execution_time, "(s)")
-
 
 def plot_execution_time (data_frame, title):
     """
@@ -71,10 +69,8 @@ def plot_execution_time (data_frame, title):
 
 plot_execution_time(df_results['floyd_warshall_recursive execution time (s)'],\
                     'Recursive Execution Time Distribution')
-
 plot_execution_time(df_results['floyd_warshall_iterative execution time (s)'],\
                     'Iterative Execution Time Distribution')
-
 
 #Tests for normal distribution of recursive function execution times
 recursive_shapiro_test = shapiro(df_results['floyd_warshall_recursive execution time (s)'])
