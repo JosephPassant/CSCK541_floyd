@@ -81,7 +81,7 @@ This file will show the mean execution time of each function over 1000 calls to 
 It wil also show a visualisation of the distribution of execution time and outcomes of the Shapiro-Wilk statistical test for normal distribution for each of the recursive and iterative functions.
 <Br>
 
-To enable the all elements code to finish running you must manually close each visualisation after viewing it.<br>
+To enable the all elements code to finish running you must manually close this visualisation.<br>
 
 If data is normally distrubuted the outcome of a student t-test comparing the statistical difference between the recursive and iterative functions will be shown.<br>
 
