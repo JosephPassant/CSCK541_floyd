@@ -20,7 +20,6 @@ class TestFloyd(unittest.TestCase):
         passing the matrix as an argument.
         It then compares the output of the function with the known expected output.
         """
-
         graph = [[0, 7, NO_PATH, 8],
                 [NO_PATH, 0, 5, NO_PATH],
                 [NO_PATH, NO_PATH, 0, 2],
@@ -86,11 +85,11 @@ class TestFloyd(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_case_5(self):
-        '''
+        """
         Defines a 4 x 4 matrix and calls floyd_warshall_recursive function
-        passing the matrix as an argument.
+        assing the matrix as an argument.
         It then compares the output of the function with the known expected output.
-        '''
+        """
         graph = [[0, 3, NO_PATH, 6],
                  [NO_PATH, 0, 6, 7],
                  [7, 6, 0, NO_PATH],
