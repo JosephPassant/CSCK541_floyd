@@ -1,4 +1,4 @@
-"""A recursive solution to the Floyd Warshall algorithm"""
+"""A recursive solution to the Floyd Warshall algorithm."""
 
 import sys
 
@@ -14,10 +14,10 @@ graph = [[0, 7, NO_PATH, 8],
 
 def floyd_warshall_recursive(dist):
     """
-    Floyd_warshall_recursive takes a n x n matrix as an argument and defines
+    Floyd_warshall_recursive takes a n x n edge weight matrix as an argument and defines
     the number of vertices.
     It then calls the recursive function shortest_path passing the input graph and the number\
-    of vertices-1 as an argument. This represents the number of intermediate nodes (k).
+    of vertices-1 as an arguments for i, j and k respectively.
     """
 
     vertices = len(dist)
@@ -26,18 +26,20 @@ def floyd_warshall_recursive(dist):
 
         """
         Shortest_path is the recursive function.
+        It takes an weighted distance matrix, i, j and k as arguments.
+        dist is the input matrix passed by the outer floyd_warshall_recursive function.
         i and j are the start and end nodes respectively, k is the number of intermediate nodes.
-        It defines the base case as being where there are no intermediate nodes k ==-1.
-        If k ==-1 then the current input matrix is returned.
-
-        The function loops through all valus of j for i and k == vertices-1, then
-        all values of i  for j = vertices-1 an 
+        i and j are all set to vertices-1 (the number of vertices in the graph minus 1).
+        The function defines the base case as being where there are no intermediate nodes k ==-1.
+        If k ==-1 then the current dist matrix is returned.
+        The function loops through all combinations of j, i and k and updates the shortest\
+        distance between i and j by considering the minimum between the current distance between\
+        i and j and the distance between i and k plus the distance between k and j. 
         """
         # if k is -1 then have finished processing all pairs of i and j for all values of k
         # and the distance matrix is returned
         if k == -1:
             return dist
-
 
         # If i is -1 then have finished prcessing al rows for the current k
         # the fucntion is called for the next vlaue of k and i and j are reset v-1
