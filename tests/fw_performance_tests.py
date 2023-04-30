@@ -23,35 +23,28 @@ graph = [[0, 7, NO_PATH, 8],
         [NO_PATH, NO_PATH, 0, 2],
         [NO_PATH, NO_PATH, NO_PATH, 0]]
 
-def performance_test(function_name):
-    """
-    Performance test for Floyd Warshall functions
-    starts timer, calls function with graph as argument, stops timer and returns execution time
-    """
-    start_time = timeit.default_timer()
-    function_name(graph)
-    return timeit.default_timer() - start_time
-
-#Creates a dataframe to store execution times from recursive function
+#Creates a dataframe to store execution times for performance_test function
 df_results = pd.DataFrame(columns=['floyd_warshall_recursive execution time (s)',\
                                     'floyd_warshall_iterative execution time (s)'])
 
-def run_performance_test(function_name):
+def performance_test(function_name):
     """
-    Runs the performance test 1000 times and adds execution times to the df_results dataframe
+    Undertakes a performance test for a given function using timeit and repeats this 200 times
+    the execution times are added to the df_results dataframe
+    The mean execution time for the function is printed to the terminal
     """
-    for i in range (200):
-        execution_time = performance_test(function_name)
-        #Adds execution time to dataframe
+    for i in range (200): 
+        start_time = timeit.default_timer()
+        function_name(graph)
+        execution_time = timeit.default_timer() - start_time
         df_results.loc[i, function_name.__name__ + ' execution time (s)'] = execution_time
 
-#Runs the performance tests for both functions, calculates the mean execution times and prints them
-run_performance_test(floyd_warshall_recursive)
-run_performance_test(floyd_warshall_iterative)
-mean_recursive_execution_time = df_results['floyd_warshall_recursive execution time (s)'].mean()
-mean_iterative_execution_time = df_results['floyd_warshall_iterative execution time (s)'].mean()
-print("Mean recursive function execution time: ", mean_recursive_execution_time, "(s)")
-print("Mean iterative function execution time: ", mean_iterative_execution_time, "(s)")
+    print("mean", function_name.__name__, "execution time: ", df_results[function_name.__name__ + \
+                                                            ' execution time (s)'].mean(), "(s)")
+
+#Runs the performance tests for both iterative and recursive functions
+performance_test(floyd_warshall_recursive)
+performance_test(floyd_warshall_iterative)
 
 # Change all df_results values to numeric values to resolve error in ttest outcome if data\
 # normally distributed
