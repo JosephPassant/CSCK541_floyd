@@ -29,11 +29,13 @@ df_results = pd.DataFrame(columns=['floyd_warshall_recursive execution time (s)'
 
 def performance_test(function_name):
     """
-    Undertakes a performance test for a given function using timeit and repeats this 200 times
-    the execution times are added to the df_results dataframe
-    The mean execution time for the function is printed to the terminal
+    Undertakes a performance test to measure the execution time for function solving the 
+    all pairs shortest path problem for the graph in line 21. 
+    Tis uses timeit. The test is repeated 200 times.
+    The execution times of each repetition are added to the df_results dataframe and
+    the mean execution time for the function is printed to the terminal.
     """
-    for i in range (200): 
+    for i in range (200):
         start_time = timeit.default_timer()
         function_name(graph)
         execution_time = timeit.default_timer() - start_time
