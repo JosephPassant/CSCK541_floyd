@@ -46,8 +46,7 @@ def performance_test(function_name):
 performance_test(floyd_warshall_recursive)
 performance_test(floyd_warshall_iterative)
 
-# Change all df_results values to numeric values to resolve error in ttest outcome if data\
-# normally distributed
+# Change all df_results values to numeric values to resolve numpy.object error
 df_results = df_results.apply(pd.to_numeric)
 
 #Tests for normal distribution of recursive function execution times
