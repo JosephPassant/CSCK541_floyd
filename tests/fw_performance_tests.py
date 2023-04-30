@@ -29,11 +29,12 @@ df_results = pd.DataFrame(columns=['floyd_warshall_recursive execution time (s)'
 
 def performance_test(function_name):
     """
-    Undertakes a performance test to measure the execution time for function solving the 
+    Undertakes a performance test to measure the execution time of a function solving the 
     all pairs shortest path problem for the graph in line 21. 
-    Tis uses timeit. The test is repeated 200 times.
-    The execution times of each repetition are added to the df_results dataframe and
-    the mean execution time for the function is printed to the terminal.
+    This function uses the timeit module to measure the execution time of the function.
+    The test is repeated 200 times and the execution time of each repetition is stored in a
+    the dataframe df_results.
+    At the end of the tests, the mean execution time for the function is printed to the terminal.
     """
     for i in range (200):
         start_time = timeit.default_timer()
@@ -84,8 +85,8 @@ def plot_execution_time(col1, col2, title):
     """
     Plots the distribution of execution times for two columns on the same chart.
     df_results is the dataframe containing the execution times.
-    col1 and col2 are the names of the columns to plot.
-    title is the title of the graph.
+    col1 and col2 are the names of the columns of the df_results dataframe to plot.
+    Title is a string input to give the title of the graph.
     """
     fig, axis = plt.subplots()
     axis.hist(df_results[col1], bins=20, label=col1)
